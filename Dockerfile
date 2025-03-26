@@ -1,4 +1,4 @@
-FROM https://quay.io/jupyter/minimal-notebook:python-3.12.9
+FROM quay.io/jupyter/minimal-notebook:python-3.12.9
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 LABEL org.opencontainers.image.authors="Jose Sanchez-Gallego, gallegoj@uw.edu"
