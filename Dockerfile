@@ -9,4 +9,7 @@ RUN pip install ipython astropy numpy matplotlib seaborn scipy pandas polars pho
 # Using GRANT_SUDO=yes does not work because we would need to run the container as root
 # and UW doesn't seem to allow that. Instead we modify the image to manually add the
 # user to the sudoers file.
+USER root
 RUN echo "${NB_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER ${NB_USER}
