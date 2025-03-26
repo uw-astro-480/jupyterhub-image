@@ -6,4 +6,7 @@ LABEL org.opencontainers.image.source=https://github.com/uw-astr-480/jupyterhub-
 
 RUN pip install ipython astropy numpy matplotlib seaborn scipy pandas polars photutils
 
-ENV GRANT_SUDO=yes
+# Using GRANT_SUDO=yes does not work because we would need to run the container as root
+# and UW doesn't seem to allow that. Instead we modify the image to manually add the
+# user to the sudoers file.
+echo "${NB_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
