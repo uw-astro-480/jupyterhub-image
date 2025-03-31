@@ -12,4 +12,10 @@ RUN pip install ipython astropy numpy matplotlib seaborn scipy pandas polars pho
 USER root
 RUN echo "${NB_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Add hook to set up an ssh key
+RUN mkdir -p /usr/local/bin/before-notebook.d
+COPY create-ssh-key.sh /usr/local/bin/before-notebook.d/
+
 USER ${NB_USER}
+
+RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
