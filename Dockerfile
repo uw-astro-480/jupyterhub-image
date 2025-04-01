@@ -19,7 +19,10 @@ COPY create-ssh-key.sh /usr/local/bin/before-notebook.d/
 
 # Install packages as root
 RUN apt-get update && apt-get install -y \
-    htop
+    htop \
+    build-essential \
+    vim \
+    git
 
 USER ${NB_USER}
 
