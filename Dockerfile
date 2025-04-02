@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -y \
     htop \
     build-essential \
     vim \
-    git
+    git \
+    tree
 
 USER ${NB_USER}
 
