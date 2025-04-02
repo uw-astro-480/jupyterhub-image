@@ -4,7 +4,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 
 # Check if the SSH key already exists or create a new one
-if [ ! -f ~/id_rsa ]; then
+if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
     echo "SSH key created."
 fi
