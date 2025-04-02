@@ -28,3 +28,5 @@ RUN apt-get update && apt-get install -y \
 USER ${NB_USER}
 
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
+
+ENV UV_PYTHON="3.12"
