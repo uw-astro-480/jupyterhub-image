@@ -29,6 +29,6 @@ USER ${NB_USER}
 
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
 
-RUN  git config pull.rebase false
+RUN  git config --global pull.rebase false
 
 ENV UV_PYTHON="3.12"
